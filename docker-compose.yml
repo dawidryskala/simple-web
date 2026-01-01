@@ -1,0 +1,14 @@
+services:
+  web:
+    build: .
+    container_name: simple-web
+    ports:
+      - "8080:80"
+    depends_on:
+      - api
+
+  api:
+    build: ./api
+    container_name: simple-api
+    expose:
+      - "5000"
